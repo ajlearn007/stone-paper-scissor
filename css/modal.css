@@ -1,0 +1,58 @@
+.rules-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* modal uses .hidden in your HTML */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  width: min(360px, 92vw);
+  background: var(--dark-green);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 20px 20px 18px;
+  position: relative;
+  border: 2px solid var(--white);
+}
+
+.modal-content h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+
+.modal-content ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.close-btn {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ff0000;
+  color: var(--white);
+  font-weight: 900;
+}

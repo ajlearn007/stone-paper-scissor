@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/game.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+</head>
+
+<body>
+
+    <!-- SCORE BOARD -->
+    <header class="scoreboard">
+        <div class="title">
+            <h1>ROCK<br>PAPER<br>SCISSORS</h1>
+        </div>
+
+        <div class="scores">
+            <div class="score-box">
+                <p>COMPUTER SCORE</p>
+                <span id="computer-score">0</span>
+            </div>
+            <div class="score-box">
+                <p>YOUR SCORE</p>
+                <span id="user-score">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- GAME SCREEN -->
+    <section id="game-screen" class="screen active">
+        <div class="choices">
+            <button class="choice rock" data-choice="rock">
+                <img src="./assets/images/rock.png" alt="rock" />
+            </button>
+
+            <button class="choice scissor" data-choice="scissor">
+                <img src="./assets/images/scissor.png" alt="scissor" />
+            </button>
+
+            <button class="choice paper" data-choice="paper">
+                <img src="./assets/images/paper.png" alt="paper" />
+            </button>
+        </div>
+    </section>
+
+    <!-- RESULT SCREEN -->
+    <section id="result-screen" class="screen hidden">
+        <div class="result-container">
+            <div class="pick user-pick">
+                <p>YOU PICKED</p>
+                <div id="user-choice" class="choice-circle"></div>
+            </div>
+
+            <div class="result-text">
+                <h2 id="result-message">YOU WIN</h2>
+                <p id="result-subtext">AGAINST PC</p>
+                <button id="play-again-btn">PLAY AGAIN</button>
+            </div>
+
+            <div class="pick pc-pick">
+                <p>PC PICKED</p>
+                <div id="pc-choice" class="choice-circle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HURRAY SCREEN -->
+    <section id="hurray-screen" class="screen hidden">
+        <div class="hurray-content">
+            <img src="./assets/images/trophy.png" alt="trophy" />
+            <h1>HURRAY!!</h1>
+            <p>YOU WON THE GAME</p>
+            <button id="hurray-play-again">PLAY AGAIN</button>
+        </div>
+    </section>
+
+    <!-- RULES BUTTON -->
+    <button id="rules-btn" class="rules-btn">RULES</button>
+
+    <!-- RULES MODAL -->
+    <div id="rules-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-rules" class="close-btn">X</button>
+            <h2>Game Rules</h2>
+            <ul>
+                <li>Rock beats scissors</li>
+                <li>Scissors beats paper</li>
+                <li>Paper beats rock</li>
+                <li>If both choose same, it's a draw</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="./js/constants.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/gameLogic.js"></script>
+    <script src="./js/ui.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>

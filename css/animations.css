@@ -1,0 +1,16 @@
+/* simple winner pulse - use later if you add win highlight */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.winner {
+  animation: pulse 0.7s ease-in-out infinite;
+}

@@ -1,0 +1,256 @@
+/* SCOREBOARD (matches .scoreboard in your HTML) */
+.scoreboard {
+  width: 100%;
+  max-width: 900px;
+  border: 3px solid var(--light-gray);
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.title h1 {
+  color: var(--light-gray);
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.1;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.scores {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.score-box {
+  background: var(--score-bg);
+  border-radius: 10px;
+  padding: 14px 22px;
+  min-width: 130px;
+  text-align: center;
+}
+
+.score-box p {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.score-box span {
+  display: block;
+  font-size: 44px;
+  font-weight: 900;
+}
+
+/* GAME CHOICES (matches .choices/.choice) */
+.choices {
+  width: min(320px, 90vw);
+  height: min(280px, 70vw);
+  position: relative;
+}
+
+.choice {
+  width: 110px;
+  height: 110px;
+  background: var(--white);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: absolute;
+}
+
+.choice img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+/* positions */
+.choice.rock {
+  top: 0;
+  left: 0;
+  border: 12px solid #0074b6;
+}
+
+.choice.scissor {
+  top: 0;
+  right: 0;
+  border: 12px solid #bd00ff;
+}
+
+.choice.paper {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 12px solid #ffa943;
+}
+
+/* RESULT SCREEN */
+.result-container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  color: var(--white);
+}
+
+.pick {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+}
+
+.pick p {
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.choice-circle {
+  margin: 0 auto;
+  width: 140px;
+  height: 140px;
+  background: var(--white);
+  border-radius: 50%;
+}
+
+.result-text {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+}
+
+.result-text h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.result-text p {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.result-text button {
+  background: var(--white);
+  padding: 10px 26px;
+  border-radius: 10px;
+  font-weight: 900;
+}
+
+/* HURRAY */
+.hurray-content {
+  text-align: center;
+  color: var(--white);
+  padding: 20px;
+}
+
+.hurray-content img {
+  width: clamp(110px, 20vw, 160px);
+  margin-bottom: 16px;
+}
+
+.hurray-content h1 {
+  font-size: clamp(42px, 6vw, 64px);
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.hurray-content p {
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+
+.hurray-content button {
+  margin-top: 18px;
+  background: var(--white);
+  padding: 10px 28px;
+  border-radius: 10px;
+  font-weight: 900;
+}
+
+.choice-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.picked-ring {
+  width: 120px;
+  height: 120px;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 12px solid transparent;
+}
+
+.picked-ring img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+/* ring colors like main screen */
+.picked-ring.rock {
+  border-color: #0074b6;
+}
+.picked-ring.paper {
+  border-color: #ffa943;
+}
+.picked-ring.scissor {
+  border-color: #bd00ff;
+}
+
+/* RESPONSIVE BREAKPOINT */
+@media (max-width: 768px) {
+  body {
+    padding: 16px;
+  }
+
+  .scoreboard {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .scores {
+    justify-content: center;
+  }
+
+  .choices {
+    transform: scale(0.9);
+  }
+
+  .choice {
+    width: 95px;
+    height: 95px;
+  }
+
+  .choice img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .choice-circle {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 420px) {
+  .choices {
+    transform: scale(0.82);
+  }
+}
