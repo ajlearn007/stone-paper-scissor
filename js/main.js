@@ -17,7 +17,7 @@ document.querySelectorAll(".choice").forEach((btn) => {
     const pcChoice = getComputerChoice();
     const result = getResult(userChoice, pcChoice);
 
-    // ✅ ADD THESE TWO LINES (THIS FIXES YOUR ISSUE)
+    
     renderPickedChoice("user-choice", userChoice);
     renderPickedChoice("pc-choice", pcChoice);
 
