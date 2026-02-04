@@ -154,7 +154,7 @@
 }
 
 .hurray-content img {
-  width: clamp(110px, 20vw, 160px);
+  width: clamp(150px, 25vw, 240px);
   margin-bottom: 16px;
 }
 
