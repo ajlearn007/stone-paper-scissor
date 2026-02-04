@@ -8,22 +8,24 @@
   border-radius: 10px;
   font-weight: 900;
   letter-spacing: 1px;
-  z-index: 5000; /* stays above normal UI */
+  z-index: 5000;
 }
 
-/* modal overlay */
+/* overlay */
 .modal {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.35);
   display: grid;
   place-items: center;
-  z-index: 10000; /* BIG on purpose */
+  z-index: 10000;
 }
 
-/* modal card */
+/* card */
 .modal-content {
   position: relative;
+  z-index: 10001;
+
   width: min(520px, 90vw);
   background: #0b4a2c;
   border: 4px solid #ffffff;
@@ -31,7 +33,6 @@
   padding: 28px;
   color: white;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-  z-index: 10001;
 }
 
 .modal-content h2 {
@@ -48,7 +49,7 @@
   line-height: 1.3;
 }
 
-/* close button */
+/* close */
 .close-btn {
   position: absolute;
   top: -22px;
@@ -69,7 +70,7 @@
   place-items: center;
   cursor: pointer;
 
-  z-index: 10002; /* ALWAYS on top */
+  z-index: 10002;
   pointer-events: auto;
 }
 
