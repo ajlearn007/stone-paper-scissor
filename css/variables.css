@@ -1,11 +1,11 @@
 :root {
   --bg-green: #b2ed5f;
   --dark-green: #004429;
-  --light-gray: #bdbdbd;
+  --light-gray: #ffffff;
   --white: #ffffff;
   --black: #000000;
 
-  --score-bg: #bdbdbd;
+  --score-bg: #ffffff;
   --border-radius: 12px;
 
   --font-main: "Arial", sans-serif;
