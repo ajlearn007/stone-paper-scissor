@@ -65,3 +65,8 @@
   place-items: center;
   cursor: pointer;
 }
+
+.close-btn {
+  z-index: 2;
+  pointer-events: auto;
+}
