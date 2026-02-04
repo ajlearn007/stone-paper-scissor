@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ===== SCORE INIT =====
   let score = getScore();
   updateScores(score.user, score.computer);
 
+  // ===== RENDER PICK =====
   function renderPickedChoice(containerId, choice) {
     const container = document.getElementById(containerId);
 
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  // ===== GAME BUTTONS =====
   document.querySelectorAll(".choice").forEach((btn) => {
     btn.addEventListener("click", () => {
       const userChoice = btn.dataset.choice;
@@ -27,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setScore(score);
       updateScores(score.user, score.computer);
       updateResultText(result);
+
       showScreen("result-screen");
 
       if (result === "win") {
@@ -35,36 +39,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.getElementById("play-again-btn").onclick = () => {
-    showScreen("game-screen");
-  };
+  // ===== PLAY AGAIN =====
+  document
+    .getElementById("play-again-btn")
+    .addEventListener("click", () => showScreen("game-screen"));
 
-  document.getElementById("hurray-play-again").onclick = () => {
-    showScreen("game-screen");
-  };
+  document
+    .getElementById("hurray-play-again")
+    .addEventListener("click", () => showScreen("game-screen"));
 
-  //  RULES MODAL OPEN
-  document.getElementById("rules-btn").onclick = () => {
-    document.getElementById("rules-modal").classList.remove("hidden");
-  };
+  // ================================
+  // ===== RULES MODAL (FINAL) ======
+  // ================================
 
-  //  RULES MODAL CLOSE (X)
-  document.getElementById("close-rules").onclick = (e) => {
+  const modal = document.getElementById("rules-modal");
+  const openRulesBtn = document.getElementById("rules-btn");
+  const closeRulesBtn = document.getElementById("close-rules");
+
+  // OPEN
+  openRulesBtn.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+  });
+
+  // CLOSE (X)
+  closeRulesBtn.addEventListener("click", (e) => {
     e.stopPropagation();
-    document.getElementById("rules-modal").classList.add("hidden");
-  };
+    modal.classList.add("hidden");
+  });
 
-  //  CLOSE WHEN CLICK OUTSIDE THE BOX
-  document.getElementById("rules-modal").addEventListener("click", (e) => {
-    if (e.target.id === "rules-modal") {
-      document.getElementById("rules-modal").classList.add("hidden");
+  // CLICK OUTSIDE CLOSE
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
     }
   });
 
-  //  ESC KEY CLOSE
+  // ESC KEY CLOSE
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
-      document.getElementById("rules-modal").classList.add("hidden");
+      modal.classList.add("hidden");
     }
   });
 });
